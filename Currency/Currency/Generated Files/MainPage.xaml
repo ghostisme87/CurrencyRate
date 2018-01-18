@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="Currency.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Currency"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Dark">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <TextBlock x:ConnectionId='1' x:Name="text1" HorizontalAlignment="Left" Margin="11,105,0,0" TextWrapping="Wrap" Text="USD" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185"/>
+        <TextBlock x:ConnectionId='2' x:Name="usd_sale" HorizontalAlignment="Left" Margin="78,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185" Width="70"/>
+        <TextBlock x:ConnectionId='3' x:Name="usd_buy" HorizontalAlignment="Left" Margin="153,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185" Width="77"/>
+        <TextBlock x:ConnectionId='4' x:Name="eur" HorizontalAlignment="Left" Margin="11,138,0,0" TextWrapping="Wrap" Text="EUR" VerticalAlignment="Top"/>
+        <TextBlock x:ConnectionId='5' x:Name="eur_sale" HorizontalAlignment="Left" Height="20" Margin="78,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:ConnectionId='6' x:Name="eur_buy" HorizontalAlignment="Left" Height="20" Margin="153,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77"                                            />
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="78,70,0,0" TextWrapping="Wrap" Text="Продажа" VerticalAlignment="Top" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="148,70,0,0" TextWrapping="Wrap" Text="Покупка" VerticalAlignment="Top" Width="70"/>
+        <ComboBox x:ConnectionId='7' x:Name="rateType" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" VerticalAlignment="Top" Width="170" SelectedIndex="0" BorderThickness="1">
+            <ComboBoxItem Content="Наличный курс" Height="35" Width="170"/>
+            <ComboBoxItem Content="Безналичный курс" Height="35" Width="170"/>
+        </ComboBox>
+        <Button x:ConnectionId='8' x:Name="refresh" Content="Обновить" HorizontalAlignment="Left" Margin="11,249,0,0" VerticalAlignment="Top" Width="99"                     />
+
+    </Grid>
+</Page>
+
