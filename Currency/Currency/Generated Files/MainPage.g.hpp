@@ -71,6 +71,18 @@ void ::Currency::MainPage::Connect(int __connectionId, ::Platform::Object^ __tar
                     (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::Button_Click);
             }
             break;
+        case 9:
+            {
+                this->btc_sale = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(this->btc_sale))->SelectionChanged += ref new ::Windows::UI::Xaml::RoutedEventHandler(this, (void (::Currency::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::RoutedEventArgs^))&MainPage::TextBlock_SelectionChanged);
+            }
+            break;
+        case 10:
+            {
+                this->btc_buy = safe_cast<::Windows::UI::Xaml::Controls::TextBlock^>(__target);
+            }
+            break;
     }
     _contentLoaded = true;
 }

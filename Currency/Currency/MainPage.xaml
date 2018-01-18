@@ -12,17 +12,20 @@
 
         <TextBlock x:Name="text1" HorizontalAlignment="Left" Margin="11,105,0,0" TextWrapping="Wrap" Text="USD" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185"/>
         <TextBlock x:Name="usd_sale" HorizontalAlignment="Left" Margin="78,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185" Width="70"/>
-        <TextBlock x:Name="usd_buy" HorizontalAlignment="Left" Margin="153,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185" Width="77"/>
-        <TextBlock x:Name="eur" HorizontalAlignment="Left" Margin="11,138,0,0" TextWrapping="Wrap" Text="EUR" VerticalAlignment="Top"/>
-        <TextBlock x:Name="eur_sale" HorizontalAlignment="Left" Height="20" Margin="78,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75"/>
-        <TextBlock x:Name="eur_buy" HorizontalAlignment="Left" Height="20" Margin="153,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77" SelectionChanged="eur_buy_SelectionChanged"/>
+        <TextBlock x:Name="usd_buy" HorizontalAlignment="Left" Margin="205,105,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="28" RenderTransformOrigin="-0.422,0.185" Width="77"/>
+        <TextBlock x:Name="eur" HorizontalAlignment="Left" Margin="11,142,0,0" TextWrapping="Wrap" Text="EUR" VerticalAlignment="Top"/>
+        <TextBlock x:Name="eur_sale" HorizontalAlignment="Left" Height="20" Margin="78,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="eur_buy" HorizontalAlignment="Left" Height="20" Margin="205,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77" SelectionChanged="eur_buy_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="78,70,0,0" TextWrapping="Wrap" Text="Продажа" VerticalAlignment="Top" Width="70"/>
-        <TextBlock HorizontalAlignment="Left" Height="30" Margin="148,70,0,0" TextWrapping="Wrap" Text="Покупка" VerticalAlignment="Top" Width="70"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="198,70,0,0" TextWrapping="Wrap" Text="Покупка" VerticalAlignment="Top" Width="70"/>
         <ComboBox x:Name="rateType" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" VerticalAlignment="Top" Width="170" SelectedIndex="0" BorderThickness="1">
             <ComboBoxItem Content="Наличный курс" Height="35" Width="170"/>
             <ComboBoxItem Content="Безналичный курс" Height="35" Width="170"/>
         </ComboBox>
         <Button x:Name="refresh" Content="Обновить" HorizontalAlignment="Left" Margin="11,249,0,0" VerticalAlignment="Top" Width="99" Click="Button_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="11,180,0,0" TextWrapping="Wrap" Text="BTC" VerticalAlignment="Top"/>
+        <TextBlock x:Name="btc_sale" HorizontalAlignment="Left" Height="20" Margin="78,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="86" SelectionChanged="TextBlock_SelectionChanged"/>
+        <TextBlock x:Name="btc_buy" HorizontalAlignment="Left" Height="20" Margin="205,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77"/>
 
     </Grid>
 </Page>

@@ -42,6 +42,8 @@ namespace Currency
         private: ::Windows::UI::Xaml::Controls::TextBlock^ eur_buy;
         private: ::Windows::UI::Xaml::Controls::ComboBox^ rateType;
         private: ::Windows::UI::Xaml::Controls::Button^ refresh;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ btc_sale;
+        private: ::Windows::UI::Xaml::Controls::TextBlock^ btc_buy;
     };
 }
 

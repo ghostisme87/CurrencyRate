@@ -81,10 +81,21 @@ void Currency::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xam
 	parser.getExchangeRate(L"EUR", sale, buy);
 	eur_sale->Text = ref new String(sale.c_str());
 	eur_buy->Text = ref new String(buy.c_str());
+
+	parser.getExchangeRate(L"BTC", sale, buy);
+	btc_sale->Text = ref new String(sale.c_str());
+	btc_buy->Text = ref new String(buy.c_str());
+	
 }
 
 
 void Currency::MainPage::eur_buy_SelectionChanged(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+
+}
+
+
+void Currency::MainPage::TextBlock_SelectionChanged(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 
 }
