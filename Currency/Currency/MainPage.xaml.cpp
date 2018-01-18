@@ -9,8 +9,8 @@
 //#include <msclr\marshal_cppstd.h>
 #include <string>
 #include "rapidxml_utils.hpp"
-#include "CHttpTransport.h"
-#include "CXmlParser.h"
+//#include "CHttpTransport.h"
+//#include "CXmlParser.h"
 
 using namespace Currency;
 
@@ -34,7 +34,7 @@ MainPage::MainPage()
 }
 
 
-void Currency::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+void Currency::MainPage::updateRates()
 {
 	//Uri^ uri = ref new Uri("https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5");
 	//auto client = ref new HttpClient();
@@ -56,9 +56,9 @@ void Currency::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xam
 		break;
 	}
 
-	CHttpTransport transport;
-	String^ str = transport.request(rate);
-	
+	m_pTransport = ref new CHttpTransport();
+	String^ str = m_pTransport->request(rate);
+
 	//pin_ptr<WCHAR> content = PtrToStringChars(str);
 
 	std::wstring result(str->Begin());
@@ -68,24 +68,31 @@ void Currency::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xam
 	}
 	std::string str2(result.begin(), result.end());
 
-	CXmlParser parser;
-	parser.setDocument(result);
+	m_pParser = std::unique_ptr<CXmlParser>(new CXmlParser());
+	m_pParser->setDocument(result);
 
 	std::wstring sale;
 	std::wstring buy;
 
-	parser.getExchangeRate(L"USD", sale, buy);
+	m_pParser->getExchangeRate(L"USD", sale, buy);
 	usd_sale->Text = ref new String(sale.c_str());
 	usd_buy->Text = ref new String(buy.c_str());
 
-	parser.getExchangeRate(L"EUR", sale, buy);
+	m_pParser->getExchangeRate(L"EUR", sale, buy);
 	eur_sale->Text = ref new String(sale.c_str());
 	eur_buy->Text = ref new String(buy.c_str());
 
-	parser.getExchangeRate(L"BTC", sale, buy);
+	m_pParser->getExchangeRate(L"BTC", sale, buy);
 	btc_sale->Text = ref new String(sale.c_str());
+
+
 	btc_buy->Text = ref new String(buy.c_str());
-	
+}
+
+void Currency::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	updateRates();
+
 }
 
 
@@ -97,5 +104,11 @@ void Currency::MainPage::eur_buy_SelectionChanged(Platform::Object^ sender, Wind
 
 void Currency::MainPage::TextBlock_SelectionChanged(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
+	//updateRates();
+}
 
+
+void Currency::MainPage::rateType_SelectionChanged(Platform::Object^ sender, Windows::UI::Xaml::Controls::SelectionChangedEventArgs^ e)
+{
+	//updateRates();
 }

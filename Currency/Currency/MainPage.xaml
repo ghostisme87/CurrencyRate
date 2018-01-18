@@ -18,7 +18,7 @@
         <TextBlock x:Name="eur_buy" HorizontalAlignment="Left" Height="20" Margin="205,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="77" SelectionChanged="eur_buy_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="78,70,0,0" TextWrapping="Wrap" Text="Продажа" VerticalAlignment="Top" Width="70"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="198,70,0,0" TextWrapping="Wrap" Text="Покупка" VerticalAlignment="Top" Width="70"/>
-        <ComboBox x:Name="rateType" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" VerticalAlignment="Top" Width="170" SelectedIndex="0" BorderThickness="1">
+        <ComboBox x:Name="rateType" HorizontalAlignment="Left" Height="35" Margin="62,10,0,0" VerticalAlignment="Top" Width="170" SelectedIndex="0" BorderThickness="1" SelectionChanged="rateType_SelectionChanged">
             <ComboBoxItem Content="Наличный курс" Height="35" Width="170"/>
             <ComboBoxItem Content="Безналичный курс" Height="35" Width="170"/>
         </ComboBox>

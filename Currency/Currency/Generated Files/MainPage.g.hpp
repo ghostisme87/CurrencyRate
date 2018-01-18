@@ -62,6 +62,8 @@ void ::Currency::MainPage::Connect(int __connectionId, ::Platform::Object^ __tar
         case 7:
             {
                 this->rateType = safe_cast<::Windows::UI::Xaml::Controls::ComboBox^>(__target);
+                (safe_cast<::Windows::UI::Xaml::Controls::ComboBox^>(this->rateType))->SelectionChanged += ref new ::Windows::UI::Xaml::Controls::SelectionChangedEventHandler(this, (void (::Currency::MainPage::*)
+                    (::Platform::Object^, ::Windows::UI::Xaml::Controls::SelectionChangedEventArgs^))&MainPage::rateType_SelectionChanged);
             }
             break;
         case 8:
